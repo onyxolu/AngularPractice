@@ -1,4 +1,5 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input,EventEmitter, Output } from '@angular/core';
+// import { EventEmitter } from 'protractor';
 
 @Component({
     selector: 'pm-star',
@@ -9,11 +10,12 @@ import { Component, OnChanges, Input } from '@angular/core';
 export class StarComponent implements OnChanges{
     @Input() rating: number;
     starWidth: number;
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
 
     ngOnChanges(): void {
         this.starWidth = this.rating * 75/5 ;
     }
     onClick(): void {
-        console.log('the rating' + this.rating + 'was clicked');
+        this.ratingClicked.emit('the rating' + this.rating + 'was clicked');
     }
 }

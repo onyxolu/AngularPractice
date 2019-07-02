@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let product of products'>
-                        <td><img src={{product.imageUrl}} title={{product.productName}} style.width.px={{imageWidth}} style.margin.px={{imageMargin}}></td>
+                        <td><img *ngIf = 'showImage' src={{product.imageUrl}} title={{product.productName}} style.width.px={{imageWidth}} style.margin.px={{imageMargin}}></td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>

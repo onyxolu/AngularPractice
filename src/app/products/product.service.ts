@@ -11,7 +11,9 @@ import { catchError, tap, map } from 'rxjs/operators';
 
 export class ProductService {
     private productUrl = 'api/products/products.json';
+
     constructor(private http: HttpClient){}
+
     getProducts(): Observable<IProduct[]>{
         return this.http.get<IProduct[]>(this.productUrl).pipe(
             tap(data => console.log('All: ' + JSON.stringify(data))),
@@ -19,13 +21,15 @@ export class ProductService {
         );
     }
     private handleError(err: HttpErrorResponse){
+        console.log('chai');
         let errorMessage = '';
         if (err.error instanceof ErrorEvent){
             errorMessage = 'An error occured:' + err.error.message;
         } else {
             errorMessage = 'Server returned code: ' + err.status + ', errror message is' + err.message;
+            console.log('HI');
         }
-        console.error(errorMessage);
+        console.error('errorMessage');
         return throwError(errorMessage);
     }
 }

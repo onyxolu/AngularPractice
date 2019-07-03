@@ -28,8 +28,7 @@ export class ProductListComponent implements OnInit{
     products: IProduct[] = []
 
     constructor(private productService: ProductService) {
-        this.filteredProducts = this.products;
-        this.listFilter = 'cart';
+        
     }
 
     performFilter(filterBy: string): IProduct[] {
@@ -42,7 +41,8 @@ export class ProductListComponent implements OnInit{
         this.showImage = !this.showImage;
     }
     ngOnInit(): void {
-        console.log('On Init');
+        this.products = this.productService.getProducts();
+        this.filteredProducts = this.products;
     }
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List' + message;

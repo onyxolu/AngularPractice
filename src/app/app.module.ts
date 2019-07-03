@@ -30,7 +30,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'products', component: ProductListComponent},
-      { path: 'product/:id', component: ProductDetailComponent},
+      { path: 'products/:id', component: ProductDetailComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])

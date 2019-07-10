@@ -6,7 +6,6 @@ import { ProductService } from './product.service';
     selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css'],
-    // providers: [ProductService] for non root services
 })
 
 export class ProductListComponent implements OnInit{

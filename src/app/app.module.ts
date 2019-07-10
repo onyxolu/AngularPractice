@@ -9,7 +9,8 @@ import { ProductModule } from './products/product.module';
 import { EventsModule } from './events/events.module';
 import { Page404Component } from './page404/page404.component';
 import { LoaderComponent } from './loader/loader.component';
-import { FormComponent } from './form/form.component';
+import { FormModule } from './form/form.module';
+
 
 
 @NgModule({
@@ -18,11 +19,11 @@ import { FormComponent } from './form/form.component';
     WelcomeComponent,
     Page404Component,
     LoaderComponent,
-    FormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormModule,
     ProductModule,
     EventsModule,
     AppRoutingModule,

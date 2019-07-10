@@ -10,6 +10,7 @@ import { EventsModule } from './events/events.module';
 import { Page404Component } from './page404/page404.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FormModule } from './form/form.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormModule } from './form/form.module';
     WelcomeComponent,
     Page404Component,
     LoaderComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

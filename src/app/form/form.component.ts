@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './user/auth.service';
+import { Ilogindetails } from './user/logindetails';
 
 @Component({
   selector: 'app-form',
@@ -9,15 +10,23 @@ import { AuthService } from './user/auth.service';
 export class FormComponent implements OnInit {
   constructor() {}
 
-  userName: string;
-  password: string;
+  loginDetails: Ilogindetails = {
+    username: "",
+    password: ""
+  }
+
 
 
   ngOnInit() {
   }
 
   Login(formValue): void {
-    console.log(formValue);
+    this.loginDetails.username = formValue.username;
+    this.loginDetails.password = this.hashPassword(formValue.password);
+  }
+
+  hashPassword(password): any {
+    return password.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
   }
 
 }

@@ -8,7 +8,7 @@ import { Ilogindetails } from './user/logindetails';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  constructor(private authservice: AuthService) {}
 
   loginDetails: Ilogindetails = {
     username: "",
@@ -23,7 +23,12 @@ export class FormComponent implements OnInit {
   Login(formValue): void {
     this.loginDetails.username = formValue.username;
     this.loginDetails.password = this.hashPassword(formValue.password);
+    console.log(this.loginDetails);
+    console.log(formValue);
+    console.log(this.authservice.LoginDetailsCheck(this.loginDetails));
   }
+
+
 
   hashPassword(password): any {
     return password.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);

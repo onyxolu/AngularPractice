@@ -23,7 +23,10 @@ export class FormComponent implements OnInit {
 
   Login(formValue): void {
     this.loginDetails.username = formValue.username;
+
     this.loginDetails.password = this.encrypt(formValue.password);
+
+    // this.loginDetails.password = this.hashPassword(formValue.password);
     console.log(this.loginDetails);
     console.log(formValue);
     console.log(this.authservice.LoginDetailsCheck(this.loginDetails));

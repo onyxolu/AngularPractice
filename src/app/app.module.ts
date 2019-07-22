@@ -11,6 +11,7 @@ import { Page404Component } from './page404/page404.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FormModule } from './form/form.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -29,6 +30,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductModule,
     EventsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -43,24 +43,15 @@ export class AuthService {
     ]
 
     LoginDetailsCheck(details): boolean {
-<<<<<<< HEAD
        let userExists: Boolean = false;
-=======
->>>>>>> 21ff24f5676a3f7b002c3445e180bb0357905e14
         console.log(typeof(this.users));
         this.users.map((item) => {
             if((details.username == item.userName) && (details.password == item.password)){
                 this.currentUser = item;
-<<<<<<< HEAD
                 userExists = true;
             }
         }) 
         if(userExists){
-=======
-            }
-        }) 
-        if(this.currentUser){
->>>>>>> 21ff24f5676a3f7b002c3445e180bb0357905e14
             return true;
         } else{
             return false;
